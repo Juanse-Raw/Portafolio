@@ -1,0 +1,229 @@
+/* ----------------------------------------- */
+/*                VARIABLES FUTURISTAS       */
+/* ----------------------------------------- */
+:root {
+  --bg-main: #0a0f1f;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.2);
+
+  --cyan: #00eaff;
+  --pink: #ff3b9b;
+  --purple: #6f00ff;
+  --white: #ffffff;
+
+  --shadow-neon: 0 0 20px rgba(0, 238, 255, 0.5);
+  --blur: blur(10px);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #141e30, #0a0f1f 70%);
+  color: var(--white);
+}
+
+/* ----------------------------------------- */
+/* HEADER                                    */
+/* ----------------------------------------- */
+.header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nombre-izquierda {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--cyan), var(--pink));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: var(--shadow-neon);
+}
+
+/* NAV PC */
+.menu-pc ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu-pc a {
+  color: var(--cyan);
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu-pc a:hover {
+  color: var(--pink);
+  text-shadow: var(--shadow-neon);
+}
+
+/* ----------------------------------------- */
+/* HAMBURGUESA MÓVIL                         */
+/* ----------------------------------------- */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 32px;
+  height: 4px;
+  background: var(--cyan);
+  border-radius: 5px;
+  transition: 0.3s;
+  box-shadow: var(--shadow-neon);
+}
+
+/* animaciones */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MENÚ MÓVIL */
+.mobile-menu {
+  display: none;
+  background: var(--bg-glass);
+  position: absolute;
+  right: 15px;
+  top: 80px;
+  width: 220px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-neon);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menu a {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--pink);
+  text-shadow: var(--shadow-neon);
+}
+
+.menu-toggle:checked ~ .mobile-menu {
+  display: block;
+}
+
+/* ----------------------------------------- */
+/* SECCIONES                                 */
+/* ----------------------------------------- */
+section {
+  background: var(--bg-glass);
+  padding: 40px;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-neon);
+}
+
+section h2 {
+  color: var(--cyan);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+/* FRASE CENTRAL */
+.frase-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.cuadro-frase {
+  background: var(--bg-glass);
+  padding: 60px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-neon);
+}
+
+/* ACERCA */
+.acerca-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-direction: row-reverse;
+}
+
+/* IMAGEN */
+.imagen-redonda {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid var(--cyan);
+  object-fit: cover;
+  box-shadow: var(--shadow-neon);
+}
+
+/* HABILIDADES */
+.barra {
+  background: rgba(255, 255, 255, 0.1);
+  height: 28px;
+  border-radius: 30px;
+}
+
+.progreso {
+  height: 100%;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple));
+  box-shadow: var(--shadow-neon);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .menu-pc {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .acerca-contenedor {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
