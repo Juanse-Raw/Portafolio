@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Portafolio</title>
 
+    <!-- TIPOGRAFIA ORBITRON -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+   
     <!-- Archivo CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Archivo JS -->
+    <script src="main.js"></script>
 
     <meta
       name="description"
@@ -53,7 +63,7 @@
     <!-- FRASE CENTRAL -->
     <section class="frase-central">
       <div class="cuadro-frase">
-        <h2>PORQUE...</h2>
+        <h2>¡ MOTIVACION !</h2>
         <p>
           Programar Es Como Jugar A Ser Dios<br />
           Puedo Hacer Mis Propias Creaciones Y Darles Forma<br />
@@ -76,8 +86,8 @@
             href="https://www.instagram.com/whs.sebastian_"
             target="_blank"
             class="ig"
-            >Instagram</a>
-          
+            >Instagram</a
+          >
         </div>
 
         <img
@@ -91,7 +101,29 @@
     <!-- PROYECTOS -->
     <section id="proyectos">
       <h2>Mis Proyectos</h2>
-      <p>¡PRONTO!...</p>
+
+      <div class="proyectos-grid">
+        <div class="tarjeta-proyecto">
+          <h3>Gestor de Libros</h3>
+          <p>
+            Aplicación en JavaScript para registrar, editar, eliminar y ordenar
+            libros.
+          </p>
+        </div>
+
+        <div class="tarjeta-proyecto">
+          <h3>Portafolio Personal</h3>
+          <p>
+            Sitio moderno estilo neon-glass donde presento mis habilidades y
+            trayectoria.
+          </p>
+        </div>
+
+        <div class="tarjeta-proyecto">
+          <h3>¡ Yo !</h3>
+          <p>Yo Soy Mi Mejor Proyecto, Mi Mejor Apuesta</p>
+        </div>
+      </div>
     </section>
 
     <!-- HABILIDADES -->
@@ -101,14 +133,14 @@
       <div class="habilidad">
         <span>HTML</span>
         <div class="barra">
-          <div class="progreso" style="width: 60%">60%</div>
+          <div class="progreso" style="width: 50%">50%</div>
         </div>
       </div>
 
       <div class="habilidad">
         <span>CSS</span>
         <div class="barra">
-          <div class="progreso" style="width: 50%">50%</div>
+          <div class="progreso" style="width: 30%">30%</div>
         </div>
       </div>
 
@@ -122,7 +154,7 @@
       <div class="habilidad">
         <span>Python</span>
         <div class="barra">
-          <div class="progreso" style="width: 70%">70%</div>
+          <div class="progreso" style="width: 20%">20%</div>
         </div>
       </div>
     </section>
@@ -130,16 +162,40 @@
     <!-- CONTACTO -->
     <section id="contacto">
       <h2>Contacto</h2>
-      <p><strong>Nombre:</strong> Sebastian Lopez</p>
-      <p>
-        <strong>Correo:</strong>
-        <a href="mailto:notsebas2283@gmail.com">notsebas2283@gmail.com</a>
-      </p>
-      <p><strong>Teléfono:</strong> +57 312 283 3453</p>
+
+      <form action="htpps:" method="post">
+        <div class="campo">
+          <label>Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" />
+        </div>
+
+        <div class="campo">
+          <label>Correo</label>
+          <input type="email" id="correo" placeholder="Tu correo" />
+        </div>
+
+        <div class="campo">
+          <label>Teléfono</label>
+          <input type="text" id="telefono" placeholder="+57 000 000 0000" />
+        </div>
+
+        <div class="campo">
+          <label>Asunto</label>
+          <input type="text" id="asunto" placeholder="Motivo del mensaje" />
+        </div>
+
+        <div class="campo">
+          <label>Mensaje</label>
+          <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+
+        <p id="resultado" class="resultado"></p>
+      </form>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Sebastian Lopez</p>
-    </footer>
+    
+    
   </body>
 </html>
