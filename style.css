@@ -2,17 +2,17 @@
 /*                VARIABLES FUTURISTAS       */
 /* ----------------------------------------- */
 :root {
-  --bg-main: #0a0f1f;
-  --bg-glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --bg-main: #0a0f1f;                       /* Fondo principal */
+  --bg-glass: rgba(255, 255, 255, 0.05);    /* Fondo vidrio */
+  --glass-border: rgba(255, 255, 255, 0.2);   /* Borde vidrio */
 
-  --cyan: #00eaff;
-  --pink: #ff3b9b;
-  --purple: #6f00ff;
-  --white: #ffffff;
+  --cyan: #00eaff;                     /* Color cyan */
+  --pink: #ff3b9b;                     /* Color rosa */
+  --purple: #6f00ff;                   /* Color púrpura */  
+  --white: #ffffff;                    /* Color blanco */
 
-  --shadow-neon: 0 0 20px rgba(0, 238, 255, 0.5);
-  --blur: blur(10px);
+  --shadow-neon: 0 0 20px rgba(0, 238, 255, 0.5);     /* Sombra de neón cyan */
+  --blur: blur(10px);                              /* Efecto desenfoque */
 }
 
 /* RESET */
@@ -22,380 +22,367 @@
   box-sizing: border-box;
 }
 
+/* ----------------------------------------- */
+/* BODY                                      */
+/* ----------------------------------------- */
+
 body {
-  font-family: "Orbitron", sans-serif;
-  background: radial-gradient(circle at top, #141e30, #0a0f1f 70%);
-  color: var(--white);
+  font-family: "Orbitron", sans-serif; /* Fuente futurista */
+  background: radial-gradient(circle at top, #141e30, #0a0f1f 70%); /* Degradado oscuro */
+  color: var(--white);  /* Color de texto blanco */
 }
 
 /* ----------------------------------------- */
 /* HEADER                                    */
 /* ----------------------------------------- */
 .header {
-  padding: 20px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 20px 25px; /* Espaciado interno */
+  display: flex;      /* Flexbox para alinear elementos */
+  justify-content: space-between; /* Separar elementos a los extremos */
+  align-items: center;       /* Centrar verticalmente */
 }
 
 .nombre-izquierda {
-  font-size: 2rem;
-  font-weight: bold;
-  background: linear-gradient(90deg, var(--cyan), var(--pink));
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: var(--shadow-neon);
+  font-size: 2rem;      /* Tamaño de fuente grande */
+  font-weight: bold;    /* Negrita */
+  background: linear-gradient(90deg, var(--cyan), var(--pink));   /* Degradado de texto */
+  -webkit-background-clip: text; /* Recortar fondo al texto */
+  color: transparent;   /* Hacer texto transparente */
+  text-shadow: var(--shadow-neon);    /* Sombra de neón */
 }
 
 /* NAV PC */
 .menu-pc ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
+  display: flex;    /* Flexbox para menú horizontal */
+  gap: 30px;    /* Espacio entre elementos */
+  list-style: none;   /* Quitar viñetas */
 }
 
 .menu-pc a {
-  color: var(--cyan);
-  font-size: 1.1rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  color: var(--cyan);   /* Color de enlace */
+  font-size: 1.1rem;    /* Tamaño de fuente */
+  text-decoration: none;    /* Quitar subrayado */
+  font-weight: bold;      /* Negrita */
+  transition: 0.3s;   /* Transición suave */
+} 
 
-.menu-pc a:hover {
-  color: var(--pink);
-  text-shadow: var(--shadow-neon);
+.menu-pc a:hover {    /* Efecto hover */
+  color: var(--pink);   /* Cambiar color */
+  text-shadow: var(--shadow-neon);    /* Sombra de neón */
 }
 
 /* ----------------------------------------- */
 /* HAMBURGUESA MÓVIL                         */
 /* ----------------------------------------- */
 .menu-toggle {
-  display: none;
+  display: none;  /* Ocultar checkbox */
 }
 
 .hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
+  display: none;    /* Ocultar por defecto */
+  cursor: pointer;  /* Cambiar cursor */
+  flex-direction: column; /* Columnas */
+  gap: 5px;   /* Espacio entre líneas */
 }
 
 .hamburger span {
-  width: 32px;
-  height: 4px;
-  background: var(--cyan);
-  border-radius: 5px;
-  transition: 0.3s;
-  box-shadow: var(--shadow-neon);
+  width: 32px;    /* Ancho de líneas */
+  height: 4px;    /* Alto de líneas */
+  background: var(--cyan);  /* Color de líneas */
+  border-radius: 5px;     /* Bordes redondeados */
+  transition: 0.3s;     /* Transición suave */
+  box-shadow: var(--shadow-neon);   /* Sombra de neón */
 }
 
-/* animaciones */
-.menu-toggle:checked + .hamburger span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+/* animaciones para que la hamburguesa se transforme en una "X" */
+
+.menu-toggle:checked + .hamburger span:nth-child(1) {   /* Primera línea */
+  transform: translateY(8px) rotate(45deg);   /* Mover y rotar */
 }
-.menu-toggle:checked + .hamburger span:nth-child(2) {
-  opacity: 0;
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {   /* Segunda línea */
+  opacity: 0;   /* Desaparecer */
 }
-.menu-toggle:checked + .hamburger span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {   /* Tercera línea */
+  transform: translateY(-8px) rotate(-45deg);   /* Mover y rotar */
+} 
 
 /* MENÚ MÓVIL */
+
 .mobile-menu {
-  display: none;
-  background: var(--bg-glass);
-  position: absolute;
-  right: 15px;
-  top: 80px;
-  width: 220px;
-  padding: 20px;
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  backdrop-filter: var(--blur);
-  box-shadow: var(--shadow-neon);
+  display: none;    /* Ocultar por defecto */
+  background: var(--bg-glass);  /* Fondo vidrio */
+  position: absolute;   /* Posición absoluta */
+  right: 15px;    /* A la derecha */
+  top: 80px;      /* Debajo del header */
+  width: 220px;   /* Ancho fijo */
+  padding: 20px;    /* Espaciado interno */
+  border-radius: 20px;  /* Bordes redondeados */  
+  border: 1px solid var(--glass-border);  /* Borde vidrio */
+  backdrop-filter: var(--blur); /* Efecto desenfoque */
+  box-shadow: var(--shadow-neon); /* Sombra de neón */
 }
 
 .mobile-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  list-style: none;   /* Quitar viñetas */  
+  display: flex;    /* Flexbox */
+  flex-direction: column;   /* Columnas */
+  gap: 15px;    /* Espacio entre elementos */
 }
 
 .mobile-menu a {
-  color: var(--cyan);
-  font-size: 1.2rem;
-  text-decoration: none;
+  color: var(--cyan);   /* Color de enlace */
+  font-size: 1.2rem;    /* Tamaño de fuente */      
+  text-decoration: none;    /* Quitar subrayado */
 }
 
 .mobile-menu a:hover {
-  color: var(--pink);
-  text-shadow: var(--shadow-neon);
+  color: var(--pink); /* Cambiar color */
+  text-shadow: var(--shadow-neon);  /* Sombra de neón */
 }
 
-.menu-toggle:checked ~ .mobile-menu {
-  display: block;
+.menu-toggle:checked ~ .mobile-menu { /* Mostrar menú móvil */
+  display: block;  /* Mostrar menú */
 }
 
 /* ----------------------------------------- */
 /* SECCIONES                                 */
 /* ----------------------------------------- */
 section {
-  background: var(--bg-glass);
-  padding: 40px;
-  margin: 25px auto;
-  width: 90%;
-  max-width: 900px;
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-neon);
+  background: var(--bg-glass);  /* Fondo vidrio */
+  padding: 40px;    /* Espaciado interno */
+  margin: 25px auto;    /* Margen superior e inferior */
+  width: 90%;   /* Ancho del 90% */
+  max-width: 900px; /* Ancho máximo */
+  border-radius: 20px; /* Bordes redondeados */
+  border: 1px solid var(--glass-border); /* Borde vidrio */
+  box-shadow: var(--shadow-neon);   /* Sombra de neón */
 }
 
 section h2 {
-  color: var(--cyan);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  color: var(--cyan); /* Color de título */
+  font-size: 1.8rem;  /* Tamaño de fuente */
+  margin-bottom: 15px;  /* Espacio debajo del título */
 }
 
-/* FRASE CENTRAL (CUADRO GRANDE COMO ACERCA DE MÍ) */
 .frase-central {
-  width: 300%;
-  height: 800px;
-  max-width: 1000px;
-  margin: 40px auto;
+  width: 100%;  /* Ancho completo */
+  max-width: 1000px; /* Ancho máximo */
+  height: 650px; /* o la altura que prefieras */
+  margin: 40px auto; /* Centrado horizontal */
+  display: flex;    /* Flexbox */
+  flex-direction: column; /* Columnas */
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;     /* texto centrado */
 }
 
 .cuadro-frase h2 {
-  font-size: 2.5rem;
-  color: var(--cyan);
-  margin-bottom: 20px;
-  text-align: center;
-  padding-top: 250px;
+  font-size: 2.5rem;  /* Tamaño de fuente grande */
+  color: var(--cyan); /* Color de texto */
+  margin-bottom: 20px;  /* Espacio debajo del título */
 }
 
 .cuadro-frase p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: white;
-  text-align: center;
+  font-size: 1.5rem;  /* Tamaño de fuente */
+  line-height: 1.6;   /* Altura de línea */
+  color: white;     /* Color de texto */
 }
 
 
-/* ACERCA */
+/* ----------------------------------------- */
+/* ACERCA DE MÍ                              */
+/* ----------------------------------------- */
 .acerca-contenedor {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-direction: row-reverse;
+  display: flex;  /* Flexbox */
+  justify-content: space-between; /* Separar elementos */
+  align-items: center;  /* Centrar verticalmente */
+  gap: 40px;  /* Espacio entre elementos */
+  flex-direction: row-reverse;  /* Imagen a la derecha */
 }
 
-/* IMAGEN */
 .imagen-redonda {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 3px solid var(--cyan);
-  object-fit: cover;
-  box-shadow: var(--shadow-neon);
+  width: 220px;   /* Ancho fijo */
+  height: 220px;  /* Alto fijo */
+  border-radius: 50%; /* Hacerla redonda */
+  border: 3px solid var(--cyan);  /* Borde cyan */
+  object-fit: cover;  /* Cubrir el contenedor */
+  box-shadow: var(--shadow-neon); /* Sombra de neón */
 }
 
-/* HABILIDADES */
+/* ----------------------------------------- */
+/* HABILIDADES                               */
+/* ----------------------------------------- */
+.habilidad {
+  margin-bottom: 25px;  /* Espacio debajo de cada habilidad */
+}
+
+.habilidad span {
+  margin-bottom: 8px; /* Espacio debajo del nombre */
+  display: block; /* Mostrar como bloque */
+  font-size: 1.2rem;  /* Tamaño de fuente */
+}
+
 .barra {
-  background: rgba(255, 255, 255, 0.1);
-  height: 28px;
-  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo barra */
+  height: 28px; /* Alto de la barra */
+  border-radius: 30px;  /* Bordes redondeados */
 }
 
 .progreso {
-  height: 100%;
-  border-radius: 30px;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple));
-  box-shadow: var(--shadow-neon);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%; /* Alto completo */
+  border-radius: 30px;  /* Bordes redondeados */
+  display: flex;  /* Flexbox */
+  justify-content: center;  /* centrar horizontalmente */
+  align-items: center;  /* centrar verticalmente */
+  text-align: center; /* texto centrado */
+  color: white; /* Color de texto */
+  font-weight: bold;  /* Negrita */
+  background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple));  /* Degradado */
+  box-shadow: var(--shadow-neon); /* Sombra de neón */  
 }
 
-/* RESPONSIVE */
-@media (max-width: 850px) {
+/* Links */
+a {
+  color: var(--cyan); /* Color de enlace */
+  text-decoration: none;  /* Quitar subrayado */  
+  font-weight: 500;   /* Peso de fuente medio */
+}
+
+a:hover {   /* efecto hover */
+  color: var(--pink);   /* Cambiar color */
+}
+
+/* ----------------------------------------- */
+/* FORMULARIO                                 */
+/* ----------------------------------------- */
+.formulario {
+  display: flex;  /* Flexbox */
+  flex-direction: column; /* Columnas */
+  gap: 20px;    /* Espacio entre campos */  
+}
+
+.campo {
+  display: flex;  /* Flexbox */
+  flex-direction: column; /* Columnas */
+  gap: 8px; /* Espacio entre etiqueta y campo */
+}
+
+.campo label {  /* Estilo de etiqueta */
+  font-size: 1.1rem;  /* Tamaño de fuente */
+  color: var(--cyan); /* Color de etiqueta */
+  font-weight: 600; /* Peso de fuente */
+} 
+
+.campo input, 
+.campo textarea {
+  padding: 12px 15px; /* Espaciado interno */
+  border-radius: 12px;  /* Bordes redondeados */
+  border: 1px solid var(--glass-border);  /* Borde vidrio */
+  background: var(--bg-glass);  /* Fondo vidrio */
+  color: white;   /* Color de texto */
+  font-size: 1rem;  /* Tamaño de fuente */
+  outline: none;    /* Quitar outline */
+  box-shadow: var(--shadow-neon);   /* Sombra de neón */
+  backdrop-filter: var(--blur);     /* Efecto desenfoque */
+}
+
+.campo textarea {
+  height: 120px;  /* Alto fijo */
+  resize: none;   /* Quitar redimensionamiento */
+} 
+
+.campo input:focus, /* Efecto focus cuando le haces click*/
+.campo textarea:focus { /* Efecto focus cuando le haces click*/
+  border-color: var(--cyan);  /* Cambiar color de borde */
+  box-shadow: 0 0 15px var(--cyan);   /* Sombra de neón cyan */
+} 
+
+/* BOTÓN ENVIAR */
+.btn-enviar {
+  padding: 12px;  /* Espaciado interno */
+  border: none;   /* Quitar borde */
+  border-radius: 15px;    /* Bordes redondeados */  
+  cursor: pointer;    /* Cambiar cursor */
+  font-size: 1.2rem;    /* Tamaño de fuente */
+  background: linear-gradient(90deg, var(--cyan), var(--pink)); /* Degradado */
+  color: white; /* Color de texto */
+  font-weight: bold;  /* Negrita */
+  box-shadow: var(--shadow-neon);  /* Sombra de neón */
+  transition: 0.3s; /* Transición suave */
+}
+
+.btn-enviar:hover {
+  transform: scale(1.05); /* Efecto agrandar */
+  box-shadow: 0 0 25px var(--pink); /* Sombra de neón rosa */
+}
+
+.resultado {
+  margin-top: 10px; /* Espacio encima del mensaje */
+  font-weight: bold;  /* Negrita */
+  text-align: center; /* Texto centrado */
+}
+
+/* ----------------------------------------- */
+/* PROYECTOS                                 */
+/* ----------------------------------------- */
+.proyectos-grid {
+  display: grid;  /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Columnas responsivas */
+  gap: 25px;  /* Espacio entre tarjetas */
+  margin-top: 25px; /* Espacio encima del grid */
+}
+
+.tarjeta-proyecto {
+  background: var(--bg-glass);  /* Fondo vidrio */
+  backdrop-filter: var(--blur); /* Efecto desenfoque */
+  padding: 25px;  /* Espaciado interno */
+  border-radius: 20px;  /* Bordes redondeados */
+  border: 1px solid var(--glass-border);  /* Borde vidrio */
+  box-shadow: var(--shadow-neon); /* Sombra de neón */
+  text-align: center; /* Texto centrado */
+  transition: 0.3s; /* Transición suave */
+}
+
+.tarjeta-proyecto:hover {
+  transform: scale(1.05); /* Efecto agrandar */
+  box-shadow: 0 0 25px var(--cyan); /* Sombra de neón cyan */
+}
+
+.tarjeta-proyecto h3 {
+  color: var(--cyan); /* Color de título */
+  margin-bottom: 10px;  /* Espacio debajo del título */
+  font-size: 1.4rem;  /* Tamaño de fuente */
+}
+
+.tarjeta-proyecto p {
+  margin-bottom: 20px;  /* Espacio debajo del párrafo */
+  color: white; /* Color de texto */
+  opacity: 0.8; /* Opacidad */
+}
+
+/* ----------------------------------------- */
+/* RESPONSIVE                                */
+/* ----------------------------------------- */
+@media (max-width: 850px) { /* Media query cuando la pantalla es menor o igual a 850px*/
   .menu-pc {
     display: none;
   }
+
   .hamburger {
     display: flex;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Ajustes para pantallas pequeñas  menor o igual a 600px*/
   .acerca-contenedor {
     flex-direction: column-reverse;
     text-align: center;
   }
+
+  .imagen-redonda {
+    width: 180px;
+    height: 180px;
+  }
 }
-
-/*INSTAGRAM Y CORREO */
-
-.ig {
-  color: #00eaff;
-}
-
-/* HABILIDADES */
-.habilidad {
-  margin-bottom: 25px;
-}
-
-.habilidad span {
-  margin-bottom: 8px;
-  display: block;
-  font-size: 1.2rem;
-}
-
-.barra {
-  background: rgba(255, 255, 255, 0.1);
-  height: 28px;
-  border-radius: 30px;
-}
-
-.progreso {
-  height: 100%;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple));
-  box-shadow: var(--shadow-neon);
-}
-
-a {
-  color: var(--cyan);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  color: var(--pink);
-}
-
-/* ------------------------------- */
-/*          FORMULARIO             */
-/* ------------------------------- */
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.campo label {
-  font-size: 1.1rem;
-  color: var(--cyan);
-  font-weight: 600;
-}
-
-.campo input,
-.campo textarea {
-  padding: 12px 15px;
-  border-radius: 12px;
-  border: 1px solid var(--glass-border);
-  background: var(--bg-glass);
-  color: white;
-  font-size: 1rem;
-  outline: none;
-  box-shadow: var(--shadow-neon);
-  backdrop-filter: var(--blur);
-}
-
-.campo textarea {
-  height: 120px;
-  resize: none;
-}
-
-.campo input:focus,
-.campo textarea:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 15px var(--cyan);
-}
-
-/* BOTÓN ENVIAR */
-.btn-enviar {
-  padding: 12px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  background: linear-gradient(90deg, var(--cyan), var(--pink));
-  color: white;
-  font-weight: bold;
-  box-shadow: var(--shadow-neon);
-  transition: 0.3s;
-}
-
-.btn-enviar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--pink);
-}
-
-/* MENSAJE DE VALIDACIÓN */
-.resultado {
-  margin-top: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* ------------------------------- */
-/*       SECCIÓN PROYECTOS         */
-/* ------------------------------- */
-
-.proyectos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 25px;
-}
-
-.tarjeta-proyecto {
-  background: var(--bg-glass);
-  backdrop-filter: var(--blur);
-  padding: 25px;
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-neon);
-  text-align: center;
-  transition: 0.3s;
-}
-
-.tarjeta-proyecto:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--cyan);
-}
-
-.tarjeta-proyecto h3 {
-  color: var(--cyan);
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-}
-
-.tarjeta-proyecto p {
-  margin-bottom: 20px;
-  color: white;
-  opacity: 0.8;
-}
-
-
-
-
-
